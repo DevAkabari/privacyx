@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:privacyx/home.dart';
+
+import 'main_screen.dart';
 
 class Avtar extends StatefulWidget {
   const Avtar({Key? key}) : super(key: key);
@@ -12,22 +17,22 @@ class _AvtarState extends State<Avtar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0XFFF2F3F5),
+      backgroundColor: const Color(0XFFF2F3F5),
       body: SafeArea(
           child: Column(
         children: [
           Expanded(
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               child: Image.asset("assets/tom&jerry.png"),
             ),
           ),
           Expanded(
               child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: Column(
               children: [
-                Text(
+                const Text(
                   "Choose your avatar",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -35,18 +40,34 @@ class _AvtarState extends State<Avtar> {
                       color: Color(0xff1F1F1F)),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Home(),
+                      ),
+                    );
+                  },
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 30),
                     decoration: BoxDecoration(
                         color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            offset: Offset(0, 8),
+                            blurRadius: 22,
+                            color: Color(0XFF9DCCF6).withOpacity(0.25),
+                          )
+                        ],
                         borderRadius: BorderRadius.circular(15)),
                     child: Row(
                       children: [
-                        Text(
+                        const Text(
                           "TOM",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -54,13 +75,13 @@ class _AvtarState extends State<Avtar> {
                               color: Color(0xff1F1F1F)),
                           textAlign: TextAlign.center,
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Container(
                           height: 40,
                           width: 40,
-                          padding: EdgeInsets.symmetric(horizontal: 6),
+                          padding: const EdgeInsets.symmetric(horizontal: 6),
                           decoration: BoxDecoration(
-                              gradient: LinearGradient(
+                              gradient: const LinearGradient(
                                   begin: Alignment.topLeft,
                                   end: Alignment.bottomRight,
                                   colors: [
@@ -76,18 +97,33 @@ class _AvtarState extends State<Avtar> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 GestureDetector(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return CallScreen();
+                      },
+                    ));
+                  },
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 30),
                     decoration: BoxDecoration(
                         color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            offset: Offset(0, 8),
+                            blurRadius: 22,
+                            color: Color(0XFF9DCCF6).withOpacity(0.25),
+                          )
+                        ],
                         borderRadius: BorderRadius.circular(15)),
                     child: Row(
                       children: [
-                        Text(
+                        const Text(
                           "JERRY",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -95,13 +131,13 @@ class _AvtarState extends State<Avtar> {
                               color: Color(0xff1F1F1F)),
                           textAlign: TextAlign.center,
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Container(
                           height: 40,
                           width: 40,
-                          padding: EdgeInsets.symmetric(horizontal: 6),
+                          padding: const EdgeInsets.symmetric(horizontal: 6),
                           decoration: BoxDecoration(
-                              gradient: LinearGradient(
+                              gradient: const LinearGradient(
                                   begin: Alignment.topLeft,
                                   end: Alignment.bottomRight,
                                   colors: [
