@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:privacyx/chat_screen.dart';
 import 'package:privacyx/home_screen.dart';
 
 void main() {
@@ -52,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
             final fade = ani1.drive(tween);
             return FadeTransition(
               opacity: fade,
-              child: HomeScreen(),
+              child:ChatScreen /*HomeScreen*/(),
             );
           },
         ),

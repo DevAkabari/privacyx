@@ -21,10 +21,11 @@ class _HomeScreenState extends State<HomeScreen> {
     "Other one\nis Tom"
   ];
   List tom = ["assets/tom1.png", "assets/jerry1.png", "assets/tom2.png"];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0XFFF2F3F5),
+      backgroundColor: const Color(0XFFF2F3F5),
       body: SafeArea(
           child: PageView.builder(
               onPageChanged: (v) {
@@ -38,8 +39,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Expanded(
                       child: Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 20),
                         // height: MediaQuery.of(context).size.height/2 - 10,
 
                         // child: SvgPicture.asset("assets/image 1.svg"),
@@ -48,52 +49,53 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     Expanded(
                       child: Container(
-                        margin:
-                            EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                        margin: const EdgeInsets.symmetric(
+                            horizontal: 30, vertical: 20),
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
                             color: Colors.white,
                             boxShadow: [
                               BoxShadow(
-                                offset: Offset(0, 7),
+                                offset: const Offset(0, 7),
                                 blurRadius: 28,
-                                color: Color(0XFF000000).withOpacity(0.03),
+                                color:
+                                    const Color(0XFF000000).withOpacity(0.03),
                               )
                             ],
                             borderRadius: BorderRadius.circular(40)),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Spacer(),
+                            const Spacer(),
                             Text(
                               dev[i],
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 25,
                                   color: Color(0xff1F1F1F)),
                               textAlign: TextAlign.center,
                             ),
-                            Spacer(),
-                            Text(
+                            const Spacer(),
+                            const Text(
                               "Enjoy Chate with your Love",
                               style: TextStyle(
                                   color: Color(0xffB0B8BF), fontSize: 14),
                             ),
-                            Spacer(),
+                            const Spacer(),
                             Row(
                               children: [
-                                Spacer(),
+                                const Spacer(),
                                 Container(
                                   height: 6,
                                   width: 20,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     color: select == 0
-                                        ? Color(0xff1479FF)
-                                        : Color(0xffDCDFE3),
+                                        ?  const Color(0xff1479FF)
+                                        : const  Color(0xffDCDFE3),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 15,
                                 ),
                                 Container(
@@ -102,11 +104,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     color: select == 1
-                                        ? Color(0xff1479FF)
-                                        : Color(0xffDCDFE3),
+                                        ? const Color(0xff1479FF)
+                                        : const Color(0xffDCDFE3),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 15,
                                 ),
                                 Container(
@@ -115,34 +117,36 @@ class _HomeScreenState extends State<HomeScreen> {
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     color: select == 2
-                                        ? Color(0xff1479FF)
-                                        : Color(0xffDCDFE3),
+                                        ? const Color(0xff1479FF)
+                                        : const Color(0xffDCDFE3),
                                   ),
                                 ),
-                                Spacer(),
+                                const Spacer(),
                               ],
                             ),
-                            Spacer(),
+                            const Spacer(),
                             GestureDetector(
                               onTap: () {
                                 if (select == 2) {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => Google_signin(),
+                                      builder: (context) =>
+                                          const GoogleSignIn(),
                                     ),
                                   );
                                 } else {
                                   controller.nextPage(
-                                      duration: Duration(milliseconds: 700),
+                                      duration:
+                                          const Duration(milliseconds: 700),
                                       curve: Curves.easeIn);
                                 }
                               },
                               child: Container(
                                 // height: 50,
                                 // width: 50,
-                                padding: EdgeInsets.all(10),
-                                decoration: BoxDecoration(
+                                padding: const EdgeInsets.all(10),
+                                decoration: const BoxDecoration(
                                   color: Color(0xff1479FF),
                                   boxShadow: [
                                     BoxShadow(
@@ -160,7 +164,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ),
                             ),
-                            Spacer(),
+                            const Spacer(),
                           ],
                         ),
                       ),

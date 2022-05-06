@@ -16,8 +16,8 @@ class _PhoneState extends State<Phone> {
       backgroundColor: Color(0xffF2F3F5),
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Spacer(),
-          Text(
+          const     Spacer(),
+          const     Text(
             "Verify Phone number",
             style: TextStyle(
                 fontWeight: FontWeight.bold,
@@ -25,17 +25,17 @@ class _PhoneState extends State<Phone> {
                 color: Color(0xff1F1F1F)),
             textAlign: TextAlign.center,
           ),
-          Spacer(),
+          const   Spacer(),
           SvgPicture.asset(
             "assets/phone.svg",
             height: 150,
           ),
-          Spacer(),
+          const    Spacer(),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 50),
+            padding: const  EdgeInsets.symmetric(horizontal: 50),
             child: Column(
               children: [
-                Align(
+                const   Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "Phone",
@@ -45,32 +45,32 @@ class _PhoneState extends State<Phone> {
                     textAlign: TextAlign.left,
                   ),
                 ),
-                SizedBox(
+                const    SizedBox(
                   height: 5,
                 ),
                 TextFormField(
                   decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0),
-                      borderSide: BorderSide(
+                      borderSide:const BorderSide(
                         color: Colors.transparent,
                       ),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0),
-                      borderSide: BorderSide(
+                      borderSide:const BorderSide(
                         color: Colors.transparent,
                       ),
                     ),
                     filled: true,
-                    fillColor: Color.fromARGB(255, 255, 255, 255),
+                    fillColor:const Color.fromARGB(255, 255, 255, 255),
                   ),
                   keyboardType: TextInputType.number,
                 ),
               ],
             ),
           ),
-          SizedBox(
+          const  SizedBox(
             height: 20,
           ),
           GestureDetector(
@@ -78,18 +78,18 @@ class _PhoneState extends State<Phone> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => Otp(),
+                  builder: (context) =>const Otp(),
                 ),
               );
             }),
             child: Container(
               height: 60,
               width: double.infinity,
-              margin: EdgeInsets.symmetric(horizontal: 50),
+              margin:const EdgeInsets.symmetric(horizontal: 50),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children:const [
                   Text(
                     "Send OTP",
                     style: TextStyle(
@@ -106,18 +106,18 @@ class _PhoneState extends State<Phone> {
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(0, 7),
+                    offset:const Offset(0, 7),
                     blurRadius: 28,
-                    color: Color.fromARGB(255, 0, 81, 255).withOpacity(0.03),
+                    color:const Color.fromARGB(255, 0, 81, 255).withOpacity(0.03),
                   )
                 ],
               ),
             ),
           ),
-          Spacer(),
-          Spacer(),
-          Spacer(),
-          Spacer()
+          const Spacer(),
+          const   Spacer(),
+          const  Spacer(),
+          const  Spacer()
         ]),
       ),
     );
