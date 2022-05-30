@@ -1,11 +1,14 @@
 import 'dart:async';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:privacyx/chat_screen.dart';
 import 'package:privacyx/home_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -53,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
             final fade = ani1.drive(tween);
             return FadeTransition(
               opacity: fade,
-              child:ChatScreen /*HomeScreen*/(),
+              child: HomeScreen(),
             );
           },
         ),

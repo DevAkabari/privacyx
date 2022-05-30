@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "996590517986",
+    "project_id": "privacyx-3d5fe",
+    "storage_bucket": "privacyx-3d5fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996590517986:android:66579978906757b51228bb",
+        "android_client_info": {
+          "package_name": "com.example.privacyx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996590517986-o2702gq1ehc3n2v5sau2htttglfm9i2d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByse5hGV0h-yN69KsuLEZ1Br8gLMnKJPE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996590517986-o2702gq1ehc3n2v5sau2htttglfm9i2d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
