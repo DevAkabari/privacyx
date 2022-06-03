@@ -91,8 +91,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     color: select == 0
-                                        ?  const Color(0xff1479FF)
-                                        : const  Color(0xffDCDFE3),
+                                        ? const Color(0xff1479FF)
+                                        : const Color(0xffDCDFE3),
                                   ),
                                 ),
                                 const SizedBox(
@@ -131,8 +131,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) =>
-                                          const GoogleSignIn(),
+                                      builder: (context) => GooglesignIn(),
                                     ),
                                   );
                                 } else {

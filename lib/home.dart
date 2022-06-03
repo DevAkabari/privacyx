@@ -1,9 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:matcher/matcher.dart';
 import 'package:privacyx/theme.dart';
 import 'package:rotated_corner_decoration/rotated_corner_decoration.dart';
+
+import 'chat_screen.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -250,67 +253,81 @@ class _HomeState extends State<Home> {
                 SizedBox(
                   height: 20,
                 ),
-                Row(
-                  children: [
-                    Image.asset(
-                      "assets/Tchat.png",
-                      height: 70,
-                    ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Jerry".toUpperCase(),
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w800,
-                            color: Color(0xff1479FF),
-                          ),
-                        ),
-                        Text("Hello !!!"),
-                      ],
-                    ),
-                    Spacer(),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Container(
-                          height: 25,
-                          width: 25,
-                          decoration: BoxDecoration(
-                            color: Color(0xff1479FF),
-                            borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(5),
-                                topLeft: Radius.circular(5),
-                                bottomRight: Radius.circular(5)),
-                          ),
-                          child: Center(
-                            child: Text(
-                              "4",
-                              style: TextStyle(color: Colors.white),
+                GestureDetector(
+                  onTap: () {
+                    // print("Hello World");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ChatScreen(
+                            name: "JERRY",
+                            senderId: "jenish",
+                            receiverId: "dev"),
+                      ),
+                    );
+                  },
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        "assets/Tchat.png",
+                        height: 70,
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Jerry".toUpperCase(),
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xff1479FF),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "07:48 Pm",
-                          style:
-                              TextStyle(fontSize: 10, color: Color(0xff8E8E8E)),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    SvgPicture.asset("assets/fi-rr-angle-right.svg")
-                  ],
+                          Text("Hello !!!"),
+                        ],
+                      ),
+                      Spacer(),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Container(
+                            height: 25,
+                            width: 25,
+                            decoration: const BoxDecoration(
+                              color: Color(0xff1479FF),
+                              borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(5),
+                                  topLeft: Radius.circular(5),
+                                  bottomRight: Radius.circular(5)),
+                            ),
+                            child: const Center(
+                              child: Text(
+                                "4",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "07:48 Pm",
+                            style: TextStyle(
+                                fontSize: 10, color: Color(0xff8E8E8E)),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      SvgPicture.asset("assets/fi-rr-angle-right.svg")
+                    ],
+                  ),
                 ),
                 Divider(),
                 GestureDetector(

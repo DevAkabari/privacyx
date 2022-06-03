@@ -20,6 +20,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'Raleway',
+        highlightColor: Colors.transparent,
+        splashColor: Colors.transparent,
         textSelectionTheme:
             TextSelectionThemeData(cursorColor: Color(0xff1479FF)),
       ),

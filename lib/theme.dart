@@ -49,7 +49,7 @@ class _Theme1State extends State<Theme1> {
                             padding: EdgeInsets.all(20),
                             child: Image.asset(
                               'assets/newspaper.png',
-                              height: 40.0,
+                              height: MediaQuery.of(context).size.width * 0.1,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -79,7 +79,7 @@ class _Theme1State extends State<Theme1> {
                             padding: EdgeInsets.all(20),
                             child: Image.asset(
                               'assets/camera.png',
-                              height: 40.0,
+                              height: MediaQuery.of(context).size.width * 0.1,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -115,7 +115,7 @@ class _Theme1State extends State<Theme1> {
                             padding: EdgeInsets.all(20),
                             child: Image.asset(
                               'assets/game-console.png',
-                              height: 40.0,
+                              height: MediaQuery.of(context).size.width * 0.1,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -145,7 +145,7 @@ class _Theme1State extends State<Theme1> {
                             padding: EdgeInsets.all(20),
                             child: Image.asset(
                               'assets/clock-2.png',
-                              height: 40.0,
+                              height: MediaQuery.of(context).size.width * 0.1,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -181,7 +181,7 @@ class _Theme1State extends State<Theme1> {
                             padding: EdgeInsets.all(20),
                             child: Image.asset(
                               'assets/newspaper.png',
-                              height: 40.0,
+                              height: MediaQuery.of(context).size.width * 0.1,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -211,7 +211,7 @@ class _Theme1State extends State<Theme1> {
                             padding: EdgeInsets.all(20),
                             child: Image.asset(
                               'assets/newspaper.png',
-                              height: 40.0,
+                              height: MediaQuery.of(context).size.width * 0.1,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -247,7 +247,7 @@ class _Theme1State extends State<Theme1> {
                             padding: EdgeInsets.all(20),
                             child: Image.asset(
                               'assets/newspaper.png',
-                              height: 40.0,
+                              height: MediaQuery.of(context).size.width * 0.1,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -277,7 +277,7 @@ class _Theme1State extends State<Theme1> {
                             padding: EdgeInsets.all(20),
                             child: Image.asset(
                               'assets/newspaper.png',
-                              height: 40.0,
+                              height: MediaQuery.of(context).size.width * 0.1,
                               fit: BoxFit.cover,
                             ),
                           ),

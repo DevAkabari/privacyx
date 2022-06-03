@@ -43,5 +43,28 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+
+
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Photo Library Access Warning</string>
+    <key>NSCameraUsageDescription</key>
+    <string>This app requires access to the camera.</string>
+
+	<key>CFBundleURLTypes</key>
+    <array>
+    	<dict>
+    		<key>CFBundleTypeRole</key>
+    		<string>Editor</string>
+    		<key>CFBundleURLSchemes</key>
+    		<array>
+    			<!-- TODO Replace this value: -->
+    			<!-- Copied from GoogleService-Info.plist key REVERSED_CLIENT_ID -->
+    			<string>com.googleusercontent.apps.996590517986-qairmr86ns39ark2rq8rho7ciapak58t</string>
+    		</array>
+    	</dict>
+    </array>
+
+
 </dict>
 </plist>
+
