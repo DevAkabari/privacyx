@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:matcher/matcher.dart';
+import 'package:privacyx/screens/home_page.dart';
 import 'package:privacyx/theme.dart';
 import 'package:rotated_corner_decoration/rotated_corner_decoration.dart';
 
@@ -253,9 +254,23 @@ class _HomeState extends State<Home> {
                 SizedBox(
                   height: 20,
                 ),
+                Container(
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomePage(),
+                        ),
+                      );
+                    },
+                    child: Text("dev"),
+                  ),
+                ),
                 GestureDetector(
                   onTap: () {
                     // print("Hello World");
+
                     Navigator.push(
                       context,
                       MaterialPageRoute(

@@ -37,6 +37,8 @@ dependencies:
   flutter_svg: ^1.0.3
   get: ^4.6.1
   validators: ^3.0.0
+  shared_preferences: ^2.0.13
+  url_launcher: ^6.0.20
   flutter_otp_text_field: ^1.0.1
   rotated_corner_decoration: ^2.0.0
   cloud_firestore: ^3.1.17
@@ -48,6 +50,11 @@ dependencies:
   image_picker:  any
   photo_view: any
   fluttertoast: ^8.0.8
+  url_launcher_web: ^2.0.13
+  shared_preferences_web: ^2.0.4
+  equatable: ^2.0.5
+  provider: ^6.0.3
+  country_code_picker: ^2.0.2
 
 dev_dependencies:
   flutter_test:

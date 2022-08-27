@@ -1,32 +1,70 @@
 import 'dart:async';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:privacyx/chat_screen.dart';
 import 'package:privacyx/home_screen.dart';
+import 'package:privacyx/providers/auth_provider.dart';
+import 'package:privacyx/providers/chat_provider.dart';
+import 'package:privacyx/providers/home_provider.dart';
+import 'package:privacyx/providers/profile_provider.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(const MyApp());
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  runApp(MyApp(
+    prefs: prefs,
+  ));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  final SharedPreferences prefs;
+  final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
+  final FirebaseStorage firebaseStorage = FirebaseStorage.instance;
+  MyApp({Key? key, required this.prefs}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: 'Raleway',
-        highlightColor: Colors.transparent,
-        splashColor: Colors.transparent,
-        textSelectionTheme:
-            TextSelectionThemeData(cursorColor: Color(0xff1479FF)),
-      ),
-      home: MyHomePage(),
-    );
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider<AuthProvider>(
+              create: (_) => AuthProvider(
+                  firebaseFirestore: firebaseFirestore,
+                  prefs: prefs,
+                  googleSignIn: GoogleSignIn(),
+                  firebaseAuth: FirebaseAuth.instance)),
+          Provider<ProfileProvider>(
+              create: (_) => ProfileProvider(
+                  prefs: prefs,
+                  firebaseFirestore: firebaseFirestore,
+                  firebaseStorage: firebaseStorage)),
+          Provider<HomeProvider>(
+              create: (_) =>
+                  HomeProvider(firebaseFirestore: firebaseFirestore)),
+          Provider<ChatProvider>(
+              create: (_) => ChatProvider(
+                  prefs: prefs,
+                  firebaseStorage: firebaseStorage,
+                  firebaseFirestore: firebaseFirestore))
+        ],
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            fontFamily: 'Raleway',
+            highlightColor: Colors.transparent,
+            splashColor: Colors.transparent,
+            textSelectionTheme:
+                TextSelectionThemeData(cursorColor: Color(0xff1479FF)),
+          ),
+          home: MyHomePage(),
+        ));
   }
 }
 

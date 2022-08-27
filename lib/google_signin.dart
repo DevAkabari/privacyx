@@ -39,12 +39,12 @@ class _GooglesignInState extends State<GooglesignIn> {
           ),
           GestureDetector(
             onTap: (() {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => const Phone(),
-              //   ),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Phone(),
+                ),
+              );
               signInWithGoogle(context: context);
             }),
             child: Container(
